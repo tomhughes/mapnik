@@ -3,12 +3,13 @@
 ######################################################################
 TEMPLATE = app
 QT += core gui widgets
-QMAKE_CXX = $$system(mapnik-config --cxx)
-QMAKE_LINK = $$system(mapnik-config --cxx)
-QMAKE_CXXFLAGS += $$system(mapnik-config --cxxflags)
-QMAKE_CXXFLAGS += $$system(mapnik-config --includes --dep-includes --defines)
-QMAKE_LFLAGS += $$system(mapnik-config --libs)
-QMAKE_LFLAGS += $$system(mapnik-config --ldflags --dep-libs)
+QMAKE_CXX = $$system(../../utils/mapnik-config/mapnik-config --cxx)
+QMAKE_LINK = $$system(../../utils/mapnik-config/mapnik-config --cxx)
+QMAKE_CXXFLAGS += $$system(../../utils/mapnik-config/mapnik-config --cxxflags)
+QMAKE_CXXFLAGS += -I../../include -I../../deps/mapbox/variant/include -I../../deps/agg/include
+QMAKE_CXXFLAGS += $$system(../../utils/mapnik-config/mapnik-config --dep-includes --defines)
+QMAKE_LFLAGS += -L../../src -lmapnik
+QMAKE_LFLAGS += $$system(../../utils/mapnik-config/mapnik-config --ldflags --dep-libs)
 # Input
 
 CONFIG += qt debug_and_release
