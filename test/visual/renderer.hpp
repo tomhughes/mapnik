@@ -82,7 +82,7 @@ struct raster_renderer_base
         mapnik::image_any ref_image_any = reader->read(0, 0, reader->width(), reader->height());
         ImageType const & reference_image = mapnik::util::get<ImageType>(ref_image_any);
 
-        return mapnik::compare(actual, reference_image, 0, true);
+        return mapnik::compare(actual, reference_image, 500, true);
     }
 
     void save(image_type const & image, boost::filesystem::path const& path) const

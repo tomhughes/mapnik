@@ -52,7 +52,7 @@ TEST_CASE("ogr") {
             std::unique_ptr<mapnik::image_reader> reader(mapnik::get_image_reader(filename,"png"));
             mapnik::image_any data = reader->read(0, 0, reader->width(), reader->height());
             mapnik::image_rgba8 expected = mapnik::util::get<mapnik::image_rgba8>(data);
-            REQUIRE(mapnik::compare(expected, im) == 0);
+            REQUIRE(mapnik::compare(expected, im, 5) == 0);
         }
 
     }
