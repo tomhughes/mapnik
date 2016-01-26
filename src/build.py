@@ -145,10 +145,6 @@ else: # unix, non-macos
         mapnik_lib_link_flag += ' -Wl,-rpath-link,.'
         if env['ENABLE_SONAME']:
             mapnik_lib_link_flag += ' -Wl,-soname,%s' % mapnik_libname
-        if env['FULL_LIB_PATH']:
-            mapnik_lib_link_flag += ' -Wl,-rpath=%s' % env['MAPNIK_LIB_BASE']
-        else:
-            mapnik_lib_link_flag += ' -Wl,-z,origin -Wl,-rpath=\$$ORIGIN'
 
 source = Split(
     """
