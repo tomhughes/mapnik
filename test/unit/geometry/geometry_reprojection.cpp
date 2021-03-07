@@ -12,8 +12,8 @@ TEST_CASE("geometry reprojection") {
 
 SECTION("test_projection_4326_3857 - Empty Geometry Object") {
     using namespace mapnik::geometry;
-    mapnik::projection source("+init=epsg:4326");
-    mapnik::projection dest("+init=epsg:3857");
+    mapnik::projection source("epsg:4326");
+    mapnik::projection dest("epsg:3857");
     mapnik::proj_transform proj_trans(source, dest);
     {
         geometry_empty geom;
@@ -38,8 +38,8 @@ SECTION("test_projection_4326_3857 - Empty Geometry Object") {
 
 SECTION("test_projection_4326_3857 - Empty Geometry in Geometry Variant") {
     using namespace mapnik::geometry;
-    mapnik::projection source("+init=epsg:4326");
-    mapnik::projection dest("+init=epsg:3857");
+    mapnik::projection source("epsg:4326");
+    mapnik::projection dest("epsg:3857");
     mapnik::proj_transform proj_trans(source, dest);
     {
         geometry<double> geom = geometry_empty();
@@ -67,8 +67,8 @@ SECTION("test_projection_4326_3857 - Empty Geometry in Geometry Variant") {
 
 SECTION("test_projection_4326_3857 - Point Geometry Object") {
     using namespace mapnik::geometry;
-    mapnik::projection source("+init=epsg:4326");
-    mapnik::projection dest("+init=epsg:3857");
+    mapnik::projection source("epsg:4326");
+    mapnik::projection dest("epsg:3857");
     mapnik::proj_transform proj_trans1(source, dest);
     mapnik::proj_transform proj_trans2(dest, source);
     point<double> geom1(-97.552175, 35.522895);
@@ -120,8 +120,8 @@ SECTION("test_projection_4326_3857 - Point Geometry Object") {
 
 SECTION("test_projection_4326_3857 - Point Geometry Variant Object") {
     using namespace mapnik::geometry;
-    mapnik::projection source("+init=epsg:4326");
-    mapnik::projection dest("+init=epsg:3857");
+    mapnik::projection source("epsg:4326");
+    mapnik::projection dest("epsg:3857");
     mapnik::proj_transform proj_trans1(source, dest);
     mapnik::proj_transform proj_trans2(dest, source);
     double x1 = -97.552175;
@@ -177,8 +177,8 @@ SECTION("test_projection_4326_3857 - Point Geometry Variant Object") {
 
 SECTION("test_projection_4326_3857 - Line_String Geometry Object") {
     using namespace mapnik::geometry;
-    mapnik::projection source("+init=epsg:4326");
-    mapnik::projection dest("+init=epsg:3857");
+    mapnik::projection source("epsg:4326");
+    mapnik::projection dest("epsg:3857");
     mapnik::proj_transform proj_trans1(source, dest);
     mapnik::proj_transform proj_trans2(dest, source);
     line_string<double> geom1;
@@ -242,8 +242,8 @@ SECTION("test_projection_4326_3857 - Line_String Geometry Object") {
 
 SECTION("test_projection_4326_3857 - Line_String Geometry Variant Object") {
     using namespace mapnik::geometry;
-    mapnik::projection source("+init=epsg:4326");
-    mapnik::projection dest("+init=epsg:3857");
+    mapnik::projection source("epsg:4326");
+    mapnik::projection dest("epsg:3857");
     mapnik::proj_transform proj_trans1(source, dest);
     mapnik::proj_transform proj_trans2(dest, source);
     line_string<double> geom1_;
@@ -317,8 +317,8 @@ SECTION("test_projection_4326_3857 - Line_String Geometry Variant Object") {
 
 SECTION("test_projection_4326_3857 - Polygon Geometry Object") {
     using namespace mapnik::geometry;
-    mapnik::projection source("+init=epsg:4326");
-    mapnik::projection dest("+init=epsg:3857");
+    mapnik::projection source("epsg:4326");
+    mapnik::projection dest("epsg:3857");
     mapnik::proj_transform proj_trans1(source, dest);
     mapnik::proj_transform proj_trans2(dest, source);
     polygon<double> geom1;
@@ -406,8 +406,8 @@ SECTION("test_projection_4326_3857 - Polygon Geometry Object") {
 
 SECTION("test_projection_4326_3857 - Polygon Geometry Variant Object") {
     using namespace mapnik::geometry;
-    mapnik::projection source("+init=epsg:4326");
-    mapnik::projection dest("+init=epsg:3857");
+    mapnik::projection source("epsg:4326");
+    mapnik::projection dest("epsg:3857");
     mapnik::proj_transform proj_trans1(source, dest);
     mapnik::proj_transform proj_trans2(dest, source);
     polygon<double> geom1_;
@@ -491,8 +491,8 @@ SECTION("test_projection_4326_3857 - Polygon Geometry Variant Object") {
 
 SECTION("test_projection_4326_3857 - Multi_Point Geometry Object") {
     using namespace mapnik::geometry;
-    mapnik::projection source("+init=epsg:4326");
-    mapnik::projection dest("+init=epsg:3857");
+    mapnik::projection source("epsg:4326");
+    mapnik::projection dest("epsg:3857");
     mapnik::proj_transform proj_trans1(source, dest);
     mapnik::proj_transform proj_trans2(dest, source);
     multi_point<double> geom1;
@@ -556,8 +556,8 @@ SECTION("test_projection_4326_3857 - Multi_Point Geometry Object") {
 
 SECTION("test_projection_4326_3857 - Multi_Point Geometry Variant Object") {
     using namespace mapnik::geometry;
-    mapnik::projection source("+init=epsg:4326");
-    mapnik::projection dest("+init=epsg:3857");
+    mapnik::projection source("epsg:4326");
+    mapnik::projection dest("epsg:3857");
     mapnik::proj_transform proj_trans1(source, dest);
     mapnik::proj_transform proj_trans2(dest, source);
     multi_point<double> geom1_;
@@ -631,8 +631,8 @@ SECTION("test_projection_4326_3857 - Multi_Point Geometry Variant Object") {
 
 SECTION("test_projection_4326_3857 - Multi_Line_String Geometry Object") {
     using namespace mapnik::geometry;
-    mapnik::projection source("+init=epsg:4326");
-    mapnik::projection dest("+init=epsg:3857");
+    mapnik::projection source("epsg:4326");
+    mapnik::projection dest("epsg:3857");
     mapnik::proj_transform proj_trans1(source, dest);
     mapnik::proj_transform proj_trans2(dest, source);
     line_string<double> geom1a;
@@ -708,8 +708,8 @@ SECTION("test_projection_4326_3857 - Multi_Line_String Geometry Object") {
 
 SECTION("test_projection_4326_3857 - Multi_Line_String Geometry Variant Object") {
     using namespace mapnik::geometry;
-    mapnik::projection source("+init=epsg:4326");
-    mapnik::projection dest("+init=epsg:3857");
+    mapnik::projection source("epsg:4326");
+    mapnik::projection dest("epsg:3857");
     mapnik::proj_transform proj_trans1(source, dest);
     mapnik::proj_transform proj_trans2(dest, source);
     line_string<double> geom1a_;
@@ -787,8 +787,8 @@ SECTION("test_projection_4326_3857 - Multi_Line_String Geometry Variant Object")
 
 SECTION("test_projection_4326_3857 - Multi_Polygon Geometry Object") {
     using namespace mapnik::geometry;
-    mapnik::projection source("+init=epsg:4326");
-    mapnik::projection dest("+init=epsg:3857");
+    mapnik::projection source("epsg:4326");
+    mapnik::projection dest("epsg:3857");
     mapnik::proj_transform proj_trans1(source, dest);
     mapnik::proj_transform proj_trans2(dest, source);
     polygon<double> geom1a;
@@ -880,8 +880,8 @@ SECTION("test_projection_4326_3857 - Multi_Polygon Geometry Object") {
 
 SECTION("test_projection_4326_3857 - Multi_Polygon Geometry Variant Object") {
     using namespace mapnik::geometry;
-    mapnik::projection source("+init=epsg:4326");
-    mapnik::projection dest("+init=epsg:3857");
+    mapnik::projection source("epsg:4326");
+    mapnik::projection dest("epsg:3857");
     mapnik::proj_transform proj_trans1(source, dest);
     mapnik::proj_transform proj_trans2(dest, source);
     polygon<double> geom1a_;
@@ -969,8 +969,8 @@ SECTION("test_projection_4326_3857 - Multi_Polygon Geometry Variant Object") {
 
 SECTION("test_projection_4326_3857 - Geometry Collection Object") {
     using namespace mapnik::geometry;
-    mapnik::projection source("+init=epsg:4326");
-    mapnik::projection dest("+init=epsg:3857");
+    mapnik::projection source("epsg:4326");
+    mapnik::projection dest("epsg:3857");
     mapnik::proj_transform proj_trans1(source, dest);
     mapnik::proj_transform proj_trans2(dest, source);
     polygon<double> geom1a;
@@ -1062,8 +1062,8 @@ SECTION("test_projection_4326_3857 - Geometry Collection Object") {
 
 SECTION("test_projection_4326_3857 - Geometry Collection Variant Object") {
     using namespace mapnik::geometry;
-    mapnik::projection source("+init=epsg:4326");
-    mapnik::projection dest("+init=epsg:3857");
+    mapnik::projection source("epsg:4326");
+    mapnik::projection dest("epsg:3857");
     mapnik::proj_transform proj_trans1(source, dest);
     mapnik::proj_transform proj_trans2(dest, source);
     polygon<double> geom1a_;
@@ -1149,10 +1149,11 @@ SECTION("test_projection_4326_3857 - Geometry Collection Variant Object") {
     }
 } // END SECTION
 
+#ifdef MAPNIK_USE_PROJ
 SECTION("test_projection_4269_3857 - Line_String Geometry Object") {
     using namespace mapnik::geometry;
-    mapnik::projection source("+init=epsg:4269");
-    mapnik::projection dest("+init=epsg:3857");
+    mapnik::projection source("epsg:4269");
+    mapnik::projection dest("epsg:3857");
     mapnik::proj_transform proj_trans1(source, dest);
     mapnik::proj_transform proj_trans2(dest, source);
     line_string<double> geom1;
@@ -1216,8 +1217,8 @@ SECTION("test_projection_4269_3857 - Line_String Geometry Object") {
 
 SECTION("test_projection_4269_3857 - Point Geometry Object") {
     using namespace mapnik::geometry;
-    mapnik::projection source("+init=epsg:4269");
-    mapnik::projection dest("+init=epsg:3857");
+    mapnik::projection source("epsg:4269");
+    mapnik::projection dest("epsg:3857");
     mapnik::proj_transform proj_trans1(source, dest);
     mapnik::proj_transform proj_trans2(dest, source);
     point<double> geom1(-97.552175, 35.522895);
@@ -1267,5 +1268,6 @@ SECTION("test_projection_4269_3857 - Point Geometry Object") {
     }
 } // End Section
 
+#endif  // MAPNIK_USE_PROJ
 
 } // End Testcase

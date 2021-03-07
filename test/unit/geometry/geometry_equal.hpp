@@ -126,7 +126,7 @@ struct geometry_equal_visitor
             REQUIRE(false);
         }
 
-        for(auto const& p : zip_crange(ls1, ls2))
+        for (auto const p : zip_crange(ls1, ls2))
         {
             REQUIRE(p.template get<0>().x == Approx(p.template get<1>().x));
             REQUIRE(p.template get<0>().y == Approx(p.template get<1>().y));
@@ -143,7 +143,7 @@ struct geometry_equal_visitor
             REQUIRE(false);
         }
 
-        for (auto const& p : zip_crange(p1.interior_rings, p2.interior_rings))
+        for (auto const p : zip_crange(p1.interior_rings, p2.interior_rings))
         {
             (*this)(static_cast<line_string<T> const&>(p.template get<0>()),static_cast<line_string<T> const&>(p.template get<1>()));
         }
@@ -163,7 +163,7 @@ struct geometry_equal_visitor
             REQUIRE(false);
         }
 
-        for (auto const& ls : zip_crange(mls1, mls2))
+        for (auto const ls : zip_crange(mls1, mls2))
         {
             (*this)(ls.template get<0>(),ls.template get<1>());
         }
@@ -177,7 +177,7 @@ struct geometry_equal_visitor
             REQUIRE(false);
         }
 
-        for (auto const& poly : zip_crange(mpoly1, mpoly2))
+        for (auto const poly : zip_crange(mpoly1, mpoly2))
         {
             (*this)(poly.template get<0>(),poly.template get<1>());
         }
@@ -193,7 +193,7 @@ struct geometry_equal_visitor
             REQUIRE(false);
         }
 
-        for (auto const& g : zip_crange(c1, c2))
+        for (auto const g : zip_crange(c1, c2))
         {
             assert_g_equal(g.template get<0>(),g.template get<1>());
         }
@@ -207,7 +207,7 @@ struct geometry_equal_visitor
             REQUIRE(false);
         }
 
-        for (auto const& g : zip_crange(c1, c2))
+        for (auto const g : zip_crange(c1, c2))
         {
             assert_g_equal(g.template get<0>(),g.template get<1>());
         }
